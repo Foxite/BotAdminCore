@@ -4,9 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BotAdminCore", "BotAdminCor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.BotAdmin", "Demo.BotAdmin\Demo.BotAdmin.csproj", "{B2112F6D-208C-476B-A58A-79C245E1CEC8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dockergen", "dockergen", "{F7578AC7-6C64-4FDB-8120-11A51B5B2C46}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dockergen", "dockergen", "{C635CD8D-43FB-4B98-A6EC-F66A3764F93B}"
 	ProjectSection(SolutionItems) = preProject
-		Dockerfile.tmpl = Dockerfile.tmpl
+		dockergen\Dockerfile.tmpl = dockergen\Dockerfile.tmpl
+		dockergen\Dockerfile = dockergen\Dockerfile
 	EndProjectSection
 EndProject
 Global

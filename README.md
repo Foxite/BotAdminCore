@@ -20,7 +20,11 @@ When working on BotAdminCore, you may want to test your changes using Demo.BotAd
 To set up your own module, you can copy Demo.BotAdmin -- a project template is on the todo list.
 
 ### In production
-TODO.
+The setup is like this:
+- The Dockerfile in BotAdminCore produces the base BotAdminCore image.
+- The Dockerfile in Demo.BotAdmin produces a `FROM scratch` image containing only the files in the module folder.
+- This repository contains a Dockerfile.tmpl file, to be used with [docker-gen](https://github.com/nginx-proxy/docker-gen/); this will monitor the docker engine for containers with the label `dev.foxite.botadmin`, and produce a dockerfile that combines BotAdminCore with the modules specified by the `dev.foxite.botadmin.name` (should be `Demo.BotAdmin`) and `dev.foxite.botadmin.image` (should be `your.repository.org/demo.botadmin`).
+- This dockerfile is then built and the resulting image is <<TODO>>
 
 ## TODO
 - Production deployment

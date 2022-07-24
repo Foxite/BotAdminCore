@@ -7,19 +7,6 @@ WORKDIR "/src/BotAdminCore"
 RUN dotnet build "BotAdminCore.csproj" -c Release -o /app/build && \
     dotnet publish "BotAdminCore.csproj" -c Release -o /app/publish 
 
-
-
-
-WORKDIR /src
-COPY ["Demo.BotAdmin/Demo.BotAdmin.csproj", "Demo.BotAdmin/"]
-RUN dotnet restore "BotAdminCore/BotAdminCore.csproj"
-COPY ["Demo.BotAdmin/", "Demo.BotAdmin/"]
-WORKDIR "/src/Demo.BotAdmin"
-RUN dotnet build "Demo.BotAdmin.csproj" -c Release -o /app/publish/Modules/Demo.BotAdmin/
-
-
-
-
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS run
 WORKDIR /app
 EXPOSE 80
@@ -42,4 +29,4 @@ COPY --from=build /app/publish .
 
 USER app:app
 
-ENTRYPOINT ["dotnet", "BotAdminCore.dll"]
+CMD ["dotnet", "BotAdminCore.dll"]

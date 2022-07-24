@@ -1,0 +1,7 @@
+FROM botadmincore AS core
+
+{{ range $index, $container := whereLabelExists $ "dev.foxite.botadmin" }}
+{{ $module_name := (index $container.Labels "dev.foxite.botadmin.name") }}
+{{ $image_name := (index $container.Labels "dev.foxite.botadmin.image") }}
+{{ printf "COPY --from=%s /module /app/Modules/%s" $image_name $module_name }}
+{{ end }}

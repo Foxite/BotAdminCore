@@ -1,0 +1,14 @@
+version: "3.3"
+
+services:
+  dockergen:
+    build:
+      context: dockergen
+      dockerfile: Dockerfile
+    command: -wait 2s -notify-sighup botsome -watch /templates/botsome.tmpl /botsome/bots.json
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - botsome:/botsome/
+
+volumes:
+  botsome:
