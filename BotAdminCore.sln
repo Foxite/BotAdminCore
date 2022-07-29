@@ -8,6 +8,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dockergen", "dockergen", "{
 	ProjectSection(SolutionItems) = preProject
 		dockergen\Dockerfile.tmpl = dockergen\Dockerfile.tmpl
 		dockergen\Dockerfile = dockergen\Dockerfile
+		dockergen\build.sh = dockergen\build.sh
+		dockergen\config.sh = dockergen\config.sh
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project", "Project", "{6218BF15-9505-45AD-8A37-AE1CA792A247}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		LICENSE = LICENSE
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global

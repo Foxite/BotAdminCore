@@ -1,5 +1,7 @@
 FROM botadmincore AS core
 
+RUN mkdir /app/Modules
+
 {{ range $index, $container := whereLabelExists $ "dev.foxite.botadmin" }}
 {{ $module_name := (index $container.Labels "dev.foxite.botadmin.name") }}
 {{ $image_name := (index $container.Labels "dev.foxite.botadmin.image") }}
