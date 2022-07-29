@@ -1,2 +1,2 @@
-export IMAGE_TAG=botadmin-deploy-test-2
+export IMAGE_TAG=botadmin-deployment
 export PUSH=false

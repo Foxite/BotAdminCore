@@ -1,5 +1,9 @@
 <Project Sdk="BotAdminCore/0.0.36">
     <!--
+        To test local changes to BotAdminCore, remove the Sdk attribute above and uncomment these Import elements.
+        You will need to nuget restore the Demo project with every change to BotAdminCore.
+    --> 
+    <!-- 
     <Import Project="../BotAdminCore/Sdk/Sdk.props" />
     <Import Project="../BotAdminCore/Sdk/Sdk.targets" />
     -->

@@ -1,14 +1,33 @@
+# When using this compose file, start dockergen first, wait for the image to be built, then start core.
+# You may start demo at any point, but make sure you have built Demo.BotAdmin and tagged the image `demo.botadmin`.
+
 version: "3.3"
 
 services:
+  # Dockergen is responsible for updating the botadmin-deployment image.
+  # Note that it does not cause the BotAdmin container to be updated; you can use a tool such as Watchtower for that, or modify the command line to call your custom updating script.
   dockergen:
     build:
       context: dockergen
       dockerfile: Dockerfile
+    # The diag.sh script runs a script and pipes its output to /proc/1/fd/1, which in a docker container causes all output to show up in the container's logs.
+    # This is useful during testing and to diagnose build failures, but if it causes problems, just remove it.
     command: -wait 2s -notify '/botadmin/diag.sh /botadmin/build.sh' -watch /botadmin/Dockerfile.tmpl /botadmin/Dockerfile
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - ./dockergen/config.sh:/botadmin/config.sh:ro
+  
+  # BotAdminCore, using the image produced by dockergen.
+  core:
+    # If you want to change this, make sure to update it here and in dockergen/config.sh.
+    image: botadmin-deployment
+    ports:
+      - "8080:80"
 
-volumes:
-  botsome:
+  # A dummy container that has the labels for the demo module to be added to BotAdmin.
+  demo:
+    image: jwilder/whoami
+    labels:
+      dev.foxite.botadmin: true
+      dev.foxite.botadmin.name: Demo.BotAdmin
+      dev.foxite.botadmin.image: demo.botadmin
