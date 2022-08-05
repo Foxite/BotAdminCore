@@ -18,6 +18,12 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Content Include="Sdk.dev\Sdk.props">
+        <PackagePath>sdk</PackagePath>
+      </Content>
+      <Content Include="Sdk.dev\Sdk.targets">
+        <PackagePath>sdk</PackagePath>
+      </Content>
       <Content Include="Sdk/Sdk.props" PackagePath="sdk" />
       <Content Include="Sdk/Sdk.targets" PackagePath="sdk" />
     </ItemGroup>

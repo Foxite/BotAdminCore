@@ -1,3 +1,4 @@
+using BotAdminCore.FormTemplates;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -12,9 +13,8 @@ public class DemoController : ControllerBase {
 		m_Logger = logger;
 	}
 
-	[HttpGet]
-	public string Get() {
-		m_Logger.LogInformation("hello!");
-		return "hello!";
+	[HttpGet("TestForm")]
+	public Form GetTestForm() {
+		return null;
 	}
 }

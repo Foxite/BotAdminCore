@@ -1,12 +1,10 @@
-<Project Sdk="BotAdminCore/0.0.36">
+<Project>
     <!--
-        To test local changes to BotAdminCore, remove the Sdk attribute above and uncomment these Import elements.
-        You will need to nuget restore the Demo project with every change to BotAdminCore.
+    When copying this csproj for your own project, remove the following import elements and add this attribute to <Project>:
+    Sdk="BotAdminCore"
     --> 
-    <!-- 
-    <Import Project="../BotAdminCore/Sdk/Sdk.props" />
-    <Import Project="../BotAdminCore/Sdk/Sdk.targets" />
-    -->
+    <Import Project="../BotAdminCore/Sdk.dev/Sdk.props" />
+    <Import Project="../BotAdminCore/Sdk.dev/Sdk.targets" />
     
     <PropertyGroup>
         <ImplicitUsings>enable</ImplicitUsings>

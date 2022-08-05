@@ -9,6 +9,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="BotAdminCore" Version="0.0.36" />
+        <ProjectReference Include="../BotAdminCore/BotAdminCore.csproj" />
     </ItemGroup>
 </Project>

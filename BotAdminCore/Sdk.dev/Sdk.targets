@@ -1,0 +1,21 @@
+<Project DefaultTargets="Compile"
+         xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <Import Sdk="Microsoft.NET.Sdk.Web" Project="Sdk.targets" />
+    
+    <Target Name="CopyBAC" BeforeTargets="Restore">
+        <ItemGroup>
+            <BACLibraryFiles Include="$(SolutionDir)/BotAdminCore/bin/$(Configuration)/$(TargetFramework)/**/*.*" />
+        </ItemGroup>
+        
+        <Message Text="@(BACLibraryFiles)" Importance="high" />
+        <Message Text="$(Configuration)/$(TargetFramework)" Importance="high" />
+        <Message Text="$(SolutionDir)" Importance="high" />
+        <Message Text="hello" Importance="high" />
+        
+        <Copy
+            SourceFiles="@(BACLibraryFiles)"
+            DestinationFiles="bin/$(Configuration)/$(TargetFramework)/%(RecursiveDir)/%(Filename)%(Extension)" />
+    </Target>
+    
+</Project>
