@@ -1,26 +1,18 @@
-namespace BotAdminCore.FormTemplates; 
+namespace BotAdminCore.FormTemplates;
 
-public class Form {
-	public string Title { get; }
-	public IList<FormFieldGroup> FieldGroups { get; }
+public interface IFormFieldGroupItem { }
 
-	public Form(string title, params FormFieldGroup[] fieldGroups) {
-		Title = title;
-		FieldGroups = fieldGroups;
-	}
-}
-
-public class FormFieldGroup {
+public class BFormGroup : IFormFieldGroupItem {
 	public string Label { get; }
-	public IList<FormField> Fields { get; }
+	public IList<IFormFieldGroupItem> Items { get; }
 
-	public FormFieldGroup(string label, params FormField[] fields) {
+	public BFormGroup(string label, params IFormFieldGroupItem[] items) {
 		Label = label;
-		Fields = fields;
+		Items = items;
 	}
 }
 
-public class FormField {
+public class FormField : IFormFieldGroupItem {
 	public string Label { get; }
 	public FormFieldType Type { get; }
 	
@@ -41,6 +33,5 @@ public class FormField {
 public enum FormFieldType {
 	Text,
 	Number,
-	Date,
 	Options,
 }
