@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project", "Project", "{6218
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullyDynamicConfigurationInterface", "FullyDynamicConfigurationInterface\FullyDynamicConfigurationInterface.csproj", "{ADCE0825-0775-4234-9FDF-FB1D6D996763}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullyDynamicConfigurationInterface.Tests", "FullyDynamicConfigurationInterface.Tests\FullyDynamicConfigurationInterface.Tests.csproj", "{7625D020-082E-4962-BF72-505BEC1F446E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,5 +41,9 @@ Global
 		{ADCE0825-0775-4234-9FDF-FB1D6D996763}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADCE0825-0775-4234-9FDF-FB1D6D996763}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADCE0825-0775-4234-9FDF-FB1D6D996763}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7625D020-082E-4962-BF72-505BEC1F446E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7625D020-082E-4962-BF72-505BEC1F446E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7625D020-082E-4962-BF72-505BEC1F446E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7625D020-082E-4962-BF72-505BEC1F446E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

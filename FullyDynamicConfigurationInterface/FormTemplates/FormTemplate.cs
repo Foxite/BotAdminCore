@@ -1,18 +1,18 @@
-namespace BotAdminCore.FormTemplates;
+namespace FullyDynamicConfigurationInterface.FormTemplates;
 
-public interface IFormFieldGroupItem { }
+public interface IFormItem { }
 
-public class BFormGroup : IFormFieldGroupItem {
+public class FormGroup : IFormItem {
 	public string Label { get; }
-	public IList<IFormFieldGroupItem> Items { get; }
+	public IList<IFormItem> Items { get; }
 
-	public BFormGroup(string label, params IFormFieldGroupItem[] items) {
+	public FormGroup(string label, IList<IFormItem> items) {
 		Label = label;
 		Items = items;
 	}
 }
 
-public class FormField : IFormFieldGroupItem {
+public class FormField : IFormItem {
 	public string Label { get; }
 	public FormFieldType Type { get; }
 	
