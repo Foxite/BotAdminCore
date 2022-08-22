@@ -29,6 +29,10 @@
       <Content Include="Sdk/Sdk.targets" PackagePath="sdk" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\FullyDynamicConfigurationInterface\FullyDynamicConfigurationInterface.csproj" />
+    </ItemGroup>
+
     <Target Name="IncludeAllFilesInTargetDir" AfterTargets="Build">
         <ItemGroup>
             <None Include="$(TargetDir)\**">

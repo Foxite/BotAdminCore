@@ -17,6 +17,12 @@ public class DemoController : ControllerBase {
 		m_Logger = logger;
 	}
 
+	[HttpGet("demo")]
+	public string DemoEndpoint() {
+		return "The presence of this endpoint shows that the module system is working correctly.";
+	}
+
+	/*
 	[HttpGet("TestForm")]
 	public FormGroup GetTestForm() {
 		return new FormGroup("Test form",
@@ -40,5 +46,5 @@ public class DemoController : ControllerBase {
 		public int Testfield3 { get; set; }
 		public int Testfield4 { get; set; }
 		public string[] Testfield5 { get; set; }
-	}
+	}*/
 }
